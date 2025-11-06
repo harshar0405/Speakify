@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speakify - PDF Dictation Assistant</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">🎧 Speakify</h1>
+    <p class="subtitle">Let your PDFs speak to you</p>
+
+    <div class="upload-box">
+      <label for="pdfInput">Choose PDF file</label>
+      <input type="file" id="pdfInput" accept="application/pdf" title="Choose a PDF file to upload">
+      <button id="extractBtn">Upload & Extract</button>
+    </div>
+
+    <div id="controls" class="hidden">
+      <label for="voiceSelect">Voice:</label>
+      <select id="voiceSelect" title="Select a voice for speech synthesis"></select>
+
+      <div class="range-group">
+        <label for="speedRange">Speed: <span id="speedValue">1</span>x</label>
+        <input type="range" id="speedRange" min="0.5" max="2" value="1" step="0.1" title="Speech speed (0.5 to 2)">
+      </div>
+
+      <div class="button-group">
+        <button id="playBtn">▶ Play</button>
+        <button id="pauseBtn">⏸ Pause</button>
+        <button id="resumeBtn">🔁 Resume</button>
+        <button id="stopBtn">⏹ Stop</button>
+      </div>
+    </div>
+
+    <div id="textContainer" class="hidden">
+      <h2>Extracted Text</h2>
+      <div id="pdfText"></div>
+    </div>
+  </div>
+
+  <footer>Made with ❤ by Speakify</footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
